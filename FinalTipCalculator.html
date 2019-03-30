@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+</head>
+  <title>Tip Calculator</title>
+</head>
+<body>
+<h1 class = "heading">Tip Calculator</h1>
+  <input id = "cost" type = "number" name = "Total"> 
+   <div class = "dropdown">
+    <select id = "tipPercent">
+        <option value = "0.05" >5%</option>
+        <option value = "0.1">10%</option> 
+        <option value = "0.15">15%</option> 
+        <option value = "0.2">20%</option> 
+        <option value = "0.25">25%</option> 
+    </select> 
+   </div>
+   <div class = "button">
+       <button name = "enter" id ="start"  >Enter</button>
+   </div>
+</body>
+</html>
+<script>
+    document.getElementById("start").onclick = function() {console.log(findTipTotal())}
+
+    //Getting the total tip amount // 
+    function findTipTotal() {
+    let total = document.getElementById("cost").value;
+    let percent = document.getElementById("tipPercent").value;
+        let tipAmount = total * percent
+        return Math.floor(tipAmount * 100) / 100 
+        
+    };
+
+  </script> 
